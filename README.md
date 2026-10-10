@@ -11,6 +11,11 @@ A 32-bit message is encoded in the rotation angles of a periodic pattern added
 to sixteen blocks of an image. The image is printed, photographed with a phone,
 possibly at an angle, and the message is read back without the original image.
 
+This repository contains the desktop (Python) part only. The iPhone app that
+recorded the focal stacks is not included; its output format is documented
+below, and one example capture is provided, so the focal-stack pipeline can
+still be run.
+
 Script output and code comments are mostly in Russian.
 
 ## Installation
@@ -83,11 +88,12 @@ Run without arguments to print usage.
 
 The full pipeline of Sections 3.1–3.8: sharpness maps, frame selection,
 rescaling, AKAZE registration, blending, rectification, block reading. The
-input is a directory recorded by the iPhone app, containing `stack.bin` with
-the frames and `notes.txt` with what the app showed on screen.
+input is a capture directory containing `stack.bin` with the frames and
+`notes.txt` with the capture parameters. Such directories were recorded by
+our iPhone app, which is not part of this repository; any tool that writes
+the `stack.bin` format described below can produce them.
 
-An example capture is included at the top level of this repository, so this
-works out of the box:
+An example capture is included at the top level of this repository:
 
     python _run_real_stack.py .
 
