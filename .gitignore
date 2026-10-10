@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+out/
+
+# Права на кадр не переданы; файл остаётся локально, в репозиторий не идёт.
+sample_images/Lenna_(test_image).png
